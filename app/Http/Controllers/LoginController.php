@@ -31,6 +31,7 @@ class LoginController extends Controller
                             ->pluck('password');
 
         if($user_entry === md5($password)) {
+            Session::put(["username" => $user_entry]);
             return response()->json([
                 "response" => "success",
             ], 200);
@@ -38,6 +39,19 @@ class LoginController extends Controller
             return response()->json([
                 "response" => "failure",
             ], 400);
+        }
+    }
+
+    public function adminLogout(Request $request) {
+        try {
+            $status_code = 200;
+            $response = "You have been logged out";
+            Session::flush();
+            return JSONResponse::response($status_code,$response);
+        } catch (Exception $e) {
+            $status_code = 500;
+            $response = $e->getMessage()." ".$e->getLine();
+            return JSONResponse::response($status_code,$response);
         }
     }
 }

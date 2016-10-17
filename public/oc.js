@@ -13,7 +13,7 @@ var currentRollNumber;
 function select() {
 	var roll_number = currentRollNumber;
 
-	var route = '/content/select';
+	var route = '/oc/select';
 	var method = 'POST';
 	var remarks = $('#icon_prefix2').val();
 
@@ -41,7 +41,7 @@ function select() {
 function reject() {
 	var roll_number = currentRollNumber;
 
-	var route = '/content/reject';
+	var route = '/oc/reject';
 	var method = 'POST';
 	var remarks = $('#icon_prefix2').val();
 
@@ -69,7 +69,7 @@ function reject() {
 function shortlist() {
 	var roll_number = currentRollNumber;
 
-	var route = '/content/shortlist';
+	var route = '/oc/shortlist';
 	var method = 'POST';
 	var remarks = $('#icon_prefix2').val();
 	var request = $.ajax({
@@ -103,7 +103,7 @@ function search() {
 	var source = $("#display").html();
 	var template = Handlebars.compile(source);
 
-	var route = '/content/getanswers';
+	var route = '/oc/getanswers';
 	var method = 'POST';
 
 	var request = $.ajax({

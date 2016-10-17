@@ -2,7 +2,7 @@
 
 @section('main')
  	<div class="center-align red-text text-lighten-2">
- 	<h1>Content Selection</h1>
+ 	<h1>OC Selection</h1>
  	</div>
 		<h3>Enter Roll Number</h3>
 	<div class="row">
@@ -30,7 +30,7 @@
 				      </p></div>
 				    </li>
 					<li>
-				      <div class="collapsible-header"><b>What do you think are the responsibilities of the Content Team?</b></div>
+				      <div class="collapsible-header"><b>Come up with a new tagline for Aaveg.</b></div>
 				      <div class="collapsible-body row">
 				      	<p>	
 				      		@{{message.answer1}}
@@ -38,7 +38,7 @@
 				      </div>
 				  	</li>
 					<li>
-				      <div class="collapsible-header"><b>If you could choose to be raised by robots, dinosaurs or aliens, who would you choose? Why?</b></div>
+				      <div class="collapsible-header"><b>What is your solution to irregular CT schedules, and conflicting event schedules?</b></div>
 				      <div class="collapsible-body row">
 				      	<p>	
 				      		@{{message.answer2}}
@@ -46,7 +46,7 @@
 				      </div>
 				  	</li>
 					<li>
-				      <div class="collapsible-header"><b>You have just finished your 300 page autobiography. Please submit page 217.</b></div>
+				      <div class="collapsible-header"><b>Do you have an inclination towards arts/ambiance work? If yes, explain your interests, and your past work.</b></div>
 				      <div class="collapsible-body row">
 				      	<p>	
 				      		@{{message.answer3}}
@@ -54,7 +54,7 @@
 				      </div>
 				  	</li>
 					<li>
-				      <div class="collapsible-header"><b>Find x.</b></div>
+				      <div class="collapsible-header"><b>There is an important Barn Hall event scheduled.Explain the steps you will take to bring people down to the event.</b></div>
 				      <div class="collapsible-body row">
 				      	<p>	
 				      		@{{message.answer4}}
@@ -62,7 +62,7 @@
 				      </div>
 				  	</li>
 					<li>
-				      <div class="collapsible-header"><b>If the movie industry made a movie about your life, who should play the lead role as you, and why?</b></div>
+				      <div class="collapsible-header"><b>People LOVE you! State 3 reasons why. </b></div>
 				      <div class="collapsible-body row">
 				      	<p>	
 				      		@{{message.answer5}}
@@ -70,7 +70,7 @@
 				      </div>
 				  	</li>
 					<li>
-				      <div class="collapsible-header"><b>You have 150 words. Take a risk.</b></div>
+				      <div class="collapsible-header"><b>People HATE you! State 3 reasons why.</b></div>
 				      <div class="collapsible-body row">
 				      	<p>	
 				      		@{{message.answer6}}
@@ -78,7 +78,7 @@
 				      </div>
 				  	</li>
 					<li>
-				      <div class="collapsible-header"><b>Come up with a new event idea for Aaveg 2017. Explain.</b></div>
+				      <div class="collapsible-header"><b>Explain the procedure to book an A hall.</b></div>
 				      <div class="collapsible-body row">
 				      	<p>	
 				      		@{{message.answer7}}
@@ -86,28 +86,12 @@
 				      </div>
 				  	</li>
 					<li>
-				      <div class="collapsible-header"><b>Write a WhatsApp post that will be circulated among all first years, publicizing your new event.</b></div>
+				      <div class="collapsible-header"><b>You need judges for the following clusters. State the club that you'll contact for each one of these clusters. </b></div>
 				      <div class="collapsible-body row">
 				      	<p>	
 				      		@{{message.answer8}}
 				      	</p>
 				      </div>
-				  	</li>
-					<li>
-				      <div class="collapsible-header"><b>Tell us why you should be a part of the Content Team using alliterations.</b></div>
-				      <div class="collapsible-body row">
-				      	<p>	
-				      		@{{message.answer9}}
-				      	</p>
-				      </div>
-				  	</li>
-					<li>
-				      <div class="collapsible-header"><b>Are you interested in MoC-ing for events?</b></div>
-				      <div class="collapsible-body row">
-					      <p>
-					      @{{message.answer10}}
-					      </p>
-					  </div>
 				  	</li>
 			  </ul>
 			  <div class="row">
@@ -144,6 +128,6 @@
 			</div>
 			</div>
 		</script>
-<script type="text/javascript" src="/content.js"></script>
+<script type="text/javascript" src="/oc.js"></script>
 @endsection
 <!-- REMEMBER DISPLAY -->

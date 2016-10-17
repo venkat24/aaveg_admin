@@ -13,6 +13,7 @@
 	    	padding: 0;
 	    }
 	    body {
+	   
 	      display: flex;
 	      min-height: 100vh;
 	      flex-direction: column;
@@ -49,10 +50,30 @@
 		      <ul id="nav-mobile" class="right hide-on-med-and-down">
 		        <li><a href="/oc">OC</a></li>
 		        <li><a href="/content">Content</a></li>
-		        <li><a href="collapsible.html">Logout</a></li>
+		        <li onclick=""><a href="/admin/login">Logout</a></li>
 		      </ul>
 		    </div>
 		  </nav>
+		  <script type="text/javascript">
+		  	function logout() {
+				var route = '/content/shortlist';
+				var method = 'POST';
+
+				var request = $.ajax({
+					url: route,
+					method: method,
+					data: {
+					}
+				});
+				request.done(function(data){
+					var info = JSON.parse(data);
+					if(info.status_code == 200) {
+					} else {
+						alert('Updation Failed');
+					}
+				});
+			}
+		  </script>
 </body>
 <div class="container">
 @yield('main')
