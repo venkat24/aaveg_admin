@@ -14,8 +14,7 @@ class OcStatus extends Controller
 {
     public function selectCandidate(Request $request) {
         $validator = Validator::make($request->all(),[
-            'roll_no' => 'required|digits:9',
-            'remarks' => 'required'
+            'roll_no' => 'required|digits:9'
         ]);
         if($validator->fails()) {
             $status_code  = 400;
@@ -35,8 +34,7 @@ class OcStatus extends Controller
 
     public function rejectCandidate(Request $request) {
         $validator = Validator::make($request->all(),[
-            'roll_no' => 'required|digits:9',
-            'remarks' => 'required'
+            'roll_no' => 'required|digits:9'
         ]);
         if($validator->fails()) {
             $status_code  = 400;
@@ -56,8 +54,7 @@ class OcStatus extends Controller
 
     public function shortlistCandidate(Request $request) {
         $validator = Validator::make($request->all(),[
-            'roll_no' => 'required|digits:9',
-            'remarks' => 'required'
+            'roll_no' => 'required|digits:9'
         ]);
         if($validator->fails()) {
             $status_code  = 400;
@@ -68,7 +65,7 @@ class OcStatus extends Controller
         $remarks = $request->input('remarks');
         CandidateDetails::where("roll_no","=",$roll_number)
                         ->update([
-                            "status_oc" => "Shortlist",
+                            "status_oc" => "Shortlisted",
                             "remarks"        => $remarks
                         ]);
         return JSONResponse::response(200,"success");

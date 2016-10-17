@@ -11,7 +11,7 @@ function login() {
 	var method = 'POST';
 
 	var request = $.ajax({
-		url: route,
+		url: SITE_BASE_URL + route,
 		method: method,
 		data: { 
 			"username" : admin_roll,
@@ -22,7 +22,7 @@ function login() {
 	request.done(function(data){
 		$('#login_button').prop("disabled",false);
 		if(data.response == "success") {
-			location.href = '/home';
+			location.href = SITE_BASE_URL + '/home';
 		} else {
 			alert('Sorry, Login failed.');
 			console.log(data);

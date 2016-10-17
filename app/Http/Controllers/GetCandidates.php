@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Validator;
 use DB;
+use Validator;
 use App\CandidateDetails;
 use Sangria\JSONResponse;
 use App\Http\Requests;
@@ -40,5 +40,71 @@ class GetCandidates extends Controller {
         $candidateStatus = CandidateDetails::where("roll_no","=",$rollNumber)
                                   ->first();
         return JSONResponse::response(200,$candidateStatus);
+    }
+
+    public function getContentSelected(Request $request) {
+        $candidates = CandidateDetails::join('content_answers',
+                                             'content_answers.roll_no',
+                                             '=',
+                                             'candidate_details.roll_no'
+                                            )
+                                      ->where('status_content','=',"Selected")
+                                      ->get();
+        return JSONResponse::response(200,$candidates);
+    }
+
+    public function getContentRejected(Request $request) {
+        $candidates = CandidateDetails::join('content_answers',
+                                             'content_answers.roll_no',
+                                             '=',
+                                             'candidate_details.roll_no'
+                                            )
+                                      ->where('status_content','=',"Rejected")
+                                      ->get();
+        return JSONResponse::response(200,$candidates);
+    }
+
+    public function getContentShortlisted(Request $request) {
+        $candidates = CandidateDetails::join('content_answers',
+                                             'content_answers.roll_no',
+                                             '=',
+                                             'candidate_details.roll_no'
+                                            )
+                                      ->where('status_content','=',"Shortlisted")
+                                      ->get();
+        return JSONResponse::response(200,$candidates);
+    }
+
+    public function getOcSelected(Request $request) {
+        $candidates = CandidateDetails::join('oc_answers',
+                                             'oc_answers.roll_no',
+                                             '=',
+                                             'candidate_details.roll_no'
+                                            )
+                                      ->where('status_oc','=',"Selected")
+                                      ->get();
+        return JSONResponse::response(200,$candidates);
+    }
+
+    public function getOcRejected(Request $request) {
+        $candidates = CandidateDetails::join('oc_answers',
+                                             'oc_answers.roll_no',
+                                             '=',
+                                             'candidate_details.roll_no'
+                                            )
+                                      ->where('status_oc','=',"Rejected")
+                                      ->get();
+        return JSONResponse::response(200,$candidates);
+    }
+
+    public function getOcShortlisted(Request $request) {
+        $candidates = CandidateDetails::join('oc_answers',
+                                             'oc_answers.roll_no',
+                                             '=',
+                                             'candidate_details.roll_no'
+                                            )
+                                      ->where('status_oc','=',"Shortlisted")
+                                      ->get();
+        return JSONResponse::response(200,$candidates);
     }
 }

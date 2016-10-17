@@ -43,24 +43,37 @@
 	    }
 	</style>
 </head>
+		        <script type="text/javascript">
+ 				   var SITE_BASE_URL = "{{ url('/')}}";
+ 				</script>
 <body>
+		<ul id="oc-dropdown" class="dropdown-content">
+		  <li><a href="javascript: location.href = (SITE_BASE_URL + '/oc')">View One</a></li>
+		  <li><a href="javascript: location.href = (SITE_BASE_URL + '/oc/all')">View All</a></li>
+		</ul>
+		<ul id="content-dropdown" class="dropdown-content">
+		  <li><a href="javascript: location.href = (SITE_BASE_URL + '/content')">View One</a></li>
+		  <li><a href="javascript: location.href = (SITE_BASE_URL + '/content/all')">View All</a></li>
+		</ul>
+		<div class="navbar-fixed">
 		  <nav>
 		    <div class="nav-wrapper">
-		      <img src="{{ asset('logoaaveg_white.png') }}"style="width:150px;margin:5px;">
+		      <img src="{{ asset('logoaaveg_white.png') }}"style="width:150px;margin:5px;" onclick="location.href = SITE_BASE_URL + '/home'">
 		      <ul id="nav-mobile" class="right hide-on-med-and-down">
-		        <li><a href="/oc">OC</a></li>
-		        <li><a href="/content">Content</a></li>
+		        <li><a class="dropdown-button" href="#!" data-activates="oc-dropdown">Organizing Committee</a></li>
+		        <li><a class="dropdown-button" href="#!" data-activates="content-dropdown">Content</a></li>
 		        <li onclick=""><a href="/admin/login">Logout</a></li>
 		      </ul>
 		    </div>
 		  </nav>
+		</div>
 		  <script type="text/javascript">
 		  	function logout() {
-				var route = '/content/shortlist';
+				var route = '/admin/logout';
 				var method = 'POST';
 
 				var request = $.ajax({
-					url: route,
+					url: SITE_BASE_URL + route,
 					method: method,
 					data: {
 					}
@@ -68,8 +81,9 @@
 				request.done(function(data){
 					var info = JSON.parse(data);
 					if(info.status_code == 200) {
+						location.href = SITE_BASE_URL + "/";
 					} else {
-						alert('Updation Failed');
+						alert('Logout Failed');
 					}
 				});
 			}

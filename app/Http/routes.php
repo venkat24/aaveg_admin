@@ -23,6 +23,12 @@ Route::get('/oc', function () {
 Route::get('/content', function () {
 	return view('content');
 });
+Route::get('/content/all', function () {
+	return view('content_all');
+});
+Route::get('/oc/all', function () {
+	return view('oc_all');
+});
 
 Route::post('/admin/login', 'LoginController@adminLogin');
 Route::post('/admin/logout', 'LoginController@adminLogout');
@@ -43,6 +49,14 @@ Route::post('content/select', 'ContentStatus@selectCandidate');
 Route::post('content/reject', 'ContentStatus@rejectCandidate');
 Route::post('content/shortlist', 'ContentStatus@shortlistCandidate');
 
+Route::post('content/getselected', 'GetCandidates@getContentSelected');
+Route::post('content/getrejected', 'GetCandidates@getContentRejected');
+Route::post('content/getshortlisted', 'GetCandidates@getContentShortlisted');
+
 Route::post('oc/select', 'OcStatus@selectCandidate');
 Route::post('oc/reject', 'OcStatus@rejectCandidate');
 Route::post('oc/shortlist', 'OcStatus@shortlistCandidate');
+
+Route::post('oc/getselected', 'GetCandidates@getOcSelected');
+Route::post('oc/getrejected', 'GetCandidates@getOcRejected');
+Route::post('oc/getshortlisted', 'GetCandidates@getOcShortlisted');
